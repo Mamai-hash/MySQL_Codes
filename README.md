@@ -1,2 +1,2 @@
 # Sql_files
-A collection of my SQL files
+A collection of my MGH sql files
