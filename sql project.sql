@@ -80,10 +80,6 @@ group by SPECIALITY
 order by No_of_Specialists DESC;
 
 /*14. joins  */
-SELECT * FROM mghdata.patients;
-SELECT * FROM mghdata.providers;
-SELECT * FROM mghdata.organization;
-
 SELECT pd.NAME   PROVIDER,pd.SPECIALITY,od.NAME   ORGANIZATION,od.UTILIZATION,REVENUE
 FROM mghdata.providers pd
 JOIN
@@ -96,13 +92,6 @@ WHERE REVENUE > (SELECT round(Avg(REVENUE),2)   Avg_revenue
 FROM mghdata.organization);
 
 /* 15.STORE PROCEDURE  */
-SELECT * FROM mghdata.encounters;
-SELECT * FROM mghdata.organization;
-SELECT  * FROM mghdata.patients;
-SELECT * FROM mghdata.payer_transactions;
-SELECT * FROM mghdata.providers;
-SELECT * FROM mghdata.payer;
-
 SELECT DISTINCT pd.Id,pd.SSN,pd. BIRTH_DATE,pd.DEATH_DATE,pd.PASSPORT,pd.FULL_NAME,pd.GENDER,pd.ADDRESS,pd.CITY,pd.COUNTY,pd.ZIP,ed.ENCOUNTER_CLASS,pd.HEALTHCARE_EXPENSES,pd.HEALTHCARE_COVERAGE,ed.`START`,ed.`STOP`
 FROM mghdata.patients pd
 JOIN 
